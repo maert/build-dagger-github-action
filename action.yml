@@ -3,7 +3,7 @@ description:
 
 inputs:
   dagger-git-ref:
-    description: 'The dagger branch, tag or SHA to checkout.'
+    description: 'The dagger branch, tag or full SHA to checkout.'
     default: 'main'
     required: true
   dagger-repo:
