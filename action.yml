@@ -12,6 +12,9 @@ inputs:
     description: 'The dagger repo (or fork) to checkout.'
     default: 'dagger/dagger'
     required: true
+  repo-token:
+    description: 'PAT to allow cloning of dagger repo'
+    required: false
 
 runs:
   using: "composite"
@@ -22,7 +25,7 @@ runs:
         repository: ${{ github.event.inputs.dagger-repo }}
         path: 'src/dagger'
         ref: ${{ github.event.inputs.dagger-git-ref }}
-        token: ${{ secrets.GH_PAT }}
+        token: ${{ github.event.inputs.repo-token }}
         fetch-depth: 0
       
     # get SHA hash in case branch or tag was used for checkout
