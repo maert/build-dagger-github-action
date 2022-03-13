@@ -22,10 +22,10 @@ runs:
     - name: Checkout dagger at ref
       uses: actions/checkout@v3
       with:
-        repository: ${{ github.event.inputs.dagger-repo }}
+        repository: ${{ inputs.dagger-repo }}
         path: 'src/dagger'
-        ref: ${{ github.event.inputs.dagger-git-ref }}
-        token: ${{ github.event.inputs.repo-token }}
+        ref: ${{ inputs.dagger-git-ref }}
+        token: ${{ inputs.repo-token }}
         fetch-depth: 0
       
     # get SHA hash in case branch or tag was used for checkout
