@@ -28,6 +28,7 @@ runs:
     # get SHA hash in case branch or tag was used for checkout
     - name: Get dagger git ref hash
       id: dagger-git-ref
+      shell: bash
       run: |
         cd ${{ github.workspace }}/src/dagger
         echo "::set-output name=hash::$(git rev-parse HEAD)"
@@ -46,6 +47,7 @@ runs:
        
     - name: Build dagger
       if: steps.cache-dagger-binary.outputs.cache-hit != 'true'
+      shell: bash
       run: |
         cd ${{ github.workspace }}/src/dagger
         make dagger
