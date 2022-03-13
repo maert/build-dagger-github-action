@@ -1,7 +1,5 @@
 name: Install dagger from source
 description:
-# Expects a PAT named 'GH_PAT' in Actions secrets
-
 
 inputs:
   dagger-git-ref:
