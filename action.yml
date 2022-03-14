@@ -1,4 +1,4 @@
-name: Install dagger from source
+name: Build dagger from source
 description:
 
 inputs:
